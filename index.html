@@ -1,18 +1,19 @@
-<head></head>
-<body onload="computer()">
+<head><h1>Roll the Dice</h1></head>
+<body onload="computer(), computerDice()">
+<p> The Computer rolled:</p>
+<p id="computer_dice_pic"></p>
 
-<p>The Computer rolled:</p>
-<p id="computer_roll"></p>
 
-<button onclick="player()">Roll your dice!</button>
-
+<button onclick="player(), playerDice(), winner()">Lets roll!</button>
+<button onclick="location.reload();">Rematch</button>
 <p>You rolled:</p>
-<p id="player_roll">
-
+<p id="player_dice_pic"></p>
+    
 <p>The winner is:</p>
-<p id="winner_is">
+<p id="winner_is"></p>
 
-<input type="button" value="Play again!" onClick="location.href=location.href">
-<script src="hello.js" ></script>
+
+ 
+<script src="rollTheDice.js" ></script>
 
 </body>

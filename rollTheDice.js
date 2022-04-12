@@ -9,9 +9,9 @@ let images = ["pics/inverted-dice-1.svg",
                     "pics/inverted-dice-5.svg",
                     "pics/inverted-dice-6.svg"
                     ];
-let computerWinCounter = 0;
-let playerWinCounter = 0;
-let tieCounter = 0;
+let computerWinCounter = localStorage.getItem("computerwin");
+let playerWinCounter = localStorage.getItem("playerwin");
+let tieCounter = localStorage.getItem("tie");
 
 
 function computer() {
@@ -33,15 +33,18 @@ function winner() {
     if (computerRoll > playerRoll) {
         document.getElementById("winner-is").innerHTML = "Computer";
         computerWinCounter += 1
-        document.getElementById("computer-win-counter").innerHTML = computerWinCounter;
+        localStorage.setItem("computerwin", parseInt(computerWinCounter));
+        document.getElementById("computer-win-counter").innerHTML = localStorage.getItem("computerwin");
     } else if (computerRoll < playerRoll) {
         document.getElementById("winner-is").innerHTML = "You";
         playerWinCounter += 1
-        document.getElementById("player-win-counter").innerHTML = playerWinCounter;
+        localStorage.setItem("playerwin", parseInt(playerWinCounter));
+        document.getElementById("player-win-counter").innerHTML = localStorage.getItem("playerwin");
     } else {
         document.getElementById("winner-is").innerHTML = "It's a tie";
         tieCounter += 1
-        document.getElementById("tie-counter").innerHTML = tieCounter;
+        localStorage.setItem("tie", parseInt(tieCounter));
+        document.getElementById("tie-counter").innerHTML = localStorage.getItem("tie");;
     }
 }
 

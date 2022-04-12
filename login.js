@@ -1,8 +1,22 @@
-function sendCredentials() {
+function checkCredentials() {
 
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-    localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
-    
+    if (checkUsername() && checkPassword() == true) {
+        document.getElementById("login-result").innerHTML = "Login OK";
+    } else {
+        document.getElementById("login-result").innerHTML = "Login FAILED";
+    }
+}
+
+function checkUsername() {
+
+    if (document.getElementById("username").value === localStorage.getItem("username")) {
+        return true;
+    }
+}
+
+function checkPassword() {
+
+    if (document.getElementById("password").value === localStorage.getItem("password")) {
+        return true;
+    }
 }

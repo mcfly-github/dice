@@ -9,9 +9,38 @@ let images = ["pics/inverted-dice-1.svg",
                     "pics/inverted-dice-5.svg",
                     "pics/inverted-dice-6.svg"
                     ];
-let computerWinCounter = localStorage.getItem("computerwin");
-let playerWinCounter = localStorage.getItem("playerwin");
-let tieCounter = localStorage.getItem("tie");
+let computerWinCounter = parseInt(localStorage.getItem("computerwin"));
+let playerWinCounter = parseInt(localStorage.getItem("playerwin"));
+let tieCounter = parseInt(localStorage.getItem("tie"));
+
+function showCounters() {
+
+    document.getElementById("computer-win-counter").innerHTML = computerWinCounter;
+    document.getElementById("player-win-counter").innerHTML = playerWinCounter;
+    document.getElementById("tie-counter").innerHTML = tieCounter;
+
+}
+
+
+function reloadPage() {
+
+    location.reload()
+
+}
+
+
+function buttonCheck() {
+
+    let counter = 0;
+    document.getElementById("roll-button").onclick = () => {
+    counter++
+        if (counter == 1) {
+
+            reloadPage()
+
+        }
+    }
+}
 
 
 function computer() {
@@ -33,20 +62,21 @@ function winner() {
     if (computerRoll > playerRoll) {
         document.getElementById("winner-is").innerHTML = "Computer";
         computerWinCounter += 1
-        localStorage.setItem("computerwin", parseInt(computerWinCounter));
+        localStorage.setItem("computerwin", computerWinCounter);
         document.getElementById("computer-win-counter").innerHTML = localStorage.getItem("computerwin");
     } else if (computerRoll < playerRoll) {
         document.getElementById("winner-is").innerHTML = "You";
         playerWinCounter += 1
-        localStorage.setItem("playerwin", parseInt(playerWinCounter));
+        localStorage.setItem("playerwin", playerWinCounter);
         document.getElementById("player-win-counter").innerHTML = localStorage.getItem("playerwin");
     } else {
         document.getElementById("winner-is").innerHTML = "It's a tie";
         tieCounter += 1
-        localStorage.setItem("tie", parseInt(tieCounter));
-        document.getElementById("tie-counter").innerHTML = localStorage.getItem("tie");;
+        localStorage.setItem("tie", tieCounter);
+        document.getElementById("tie-counter").innerHTML = localStorage.getItem("tie");
     }
 }
+
 
 function computerDice() {
 
@@ -64,7 +94,7 @@ function playerDice() {
 
     if (checkElement == true) {
 
-        location.reload()
+        reloadPage()
 
     } else {
 
@@ -77,8 +107,10 @@ function playerDice() {
     }
 }
 
+
 function textChange() {
 
     document.getElementById("roll-button").innerHTML = "Play again";
     
 }
+

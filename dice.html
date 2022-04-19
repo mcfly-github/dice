@@ -2,28 +2,35 @@
 <html>
 <head><h1>Roll the Dice</h1><link rel="stylesheet" href="style.css"></head>
 
-<body onload="computer(), computerDice()">
+<body onload="computer(), computerDice(), showCounters()">
 
-<p> The Computer rolled:</p>
-<p id="computer-dice-pic"></p>
+<div class="main">
 
-<button onclick="player(), playerDice(), winner(), textChange()"class="roll-button" id="roll-button">Roll the dice</button>
+    <div class="left">
+        <p>The winner is:</p>
+        <p id="winner-is"></p>
+    </div>
 
-<br>
-<p>You rolled:</p>
-<p id="player-dice-pic"></p>
-    
-<p>The winner is:</p>
-<p id="winner-is"></p>
+    <div class="middle">
+        <p> The Computer rolled:</p>
+        <p id="computer-dice-pic"></p>
 
-<p>Computer wins:</p>
-<p id="computer-win-counter"></p>
-<p>Player wins:</p>
-<p id="player-win-counter"></p>
-<p>Ties:</p>
-<p id="tie-counter"></p>
+        <button onclick="player(), playerDice(), winner(), textChange(), buttonCheck()"class="roll-button" id="roll-button">Roll the dice</button>
 
+        <p>You rolled:</p>
+        <p id="player-dice-pic"></p>  
+    </div>
 
+    <div class="right">
+        <h2>Computer wins:</h2>
+        <h2 id="computer-win-counter"></h2>
+        <h2>Player wins:</h2>
+        <h2 id="player-win-counter"></h2>
+        <h2>Ties:</h2>
+        <h2 id="tie-counter"></h2>
+    </div>
+
+</div>
 
 <script src="rollTheDice.js" ></script>
 

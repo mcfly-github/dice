@@ -1,0 +1,39 @@
+body {
+
+    background-color: aliceblue;
+    background-size: cover;
+  
+  }
+
+
+h1 {
+
+    text-align: center;
+    font-weight: bold;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: rgb(82, 74, 74);
+    font-size: 60px;
+  }
+
+
+label, input {
+    
+    margin-left: 41%;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: rgb(122, 115, 115);
+    font-size: 30px;
+
+}
+
+p {
+    
+    
+    text-align: center;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: rgb(28, 40, 49);
+    font-size: 25px;
+    
+}
+
+
+

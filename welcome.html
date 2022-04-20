@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><h1 id="title">Register</h1><link rel="stylesheet" href="welcome.css"></head>
+<body onload="statusCheck()">
+    
+<form id="register">
+<label for="reg-username">Username:</label>
+<br>
+<input type="text" name="reg-username" id="reg-username">
+<br><br><br>
+<label for="reg-password">Password:</label>
+<br>
+<input type="password" name="reg-password" id="reg-password">
+<br><br><br>
+<input type="button" onclick="storeCredentials()" value="Register">
+</form>
+
+<form id="login">
+<label for="username">Username:</label>
+<br>  
+<input type="text" name="username" id="username">
+<br><br><br>
+<label for="password">Password:</label>
+<br>
+<input type="password" name="password" id="password">
+<br><br><br>
+<input type="button" onclick="checkCredentials()" value="Login">  
+</form>
+<br><br><br>
+<p id="sign-result"></p>
+
+<script src="welcome.js" ></script>
+
+</body>
+</html>

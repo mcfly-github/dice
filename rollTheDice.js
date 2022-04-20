@@ -3,15 +3,15 @@ let data = [0,1,2,3,4,5];
 let computerRoll = data[Math.floor(Math.random()*data.length)];
 let playerRoll = data[Math.floor(Math.random()*data.length)];
 let images = ["pics/inverted-dice-1.svg",
-                    "pics/inverted-dice-2.svg",
-                    "pics/inverted-dice-3.svg",
-                    "pics/inverted-dice-4.svg",
-                    "pics/inverted-dice-5.svg",
-                    "pics/inverted-dice-6.svg"
-                    ];
-let computerWinCounter = parseInt(localStorage.getItem("computerwin"));
-let playerWinCounter = parseInt(localStorage.getItem("playerwin"));
-let tieCounter = parseInt(localStorage.getItem("tie"));
+                "pics/inverted-dice-2.svg",
+                "pics/inverted-dice-3.svg",
+                "pics/inverted-dice-4.svg",
+                "pics/inverted-dice-5.svg",
+                "pics/inverted-dice-6.svg"
+                ];
+let computerWinCounter = Number(localStorage.getItem("computerwin"));
+let playerWinCounter = Number(localStorage.getItem("playerwin"));
+let tieCounter = Number(localStorage.getItem("tie"));
 
 function showCounters() {
 
@@ -114,3 +114,19 @@ function textChange() {
     
 }
 
+
+function setLocalStorage() {
+
+    if (localStorage.getItem("computerwin") == null) {
+        localStorage.setItem("computerwin", 0);
+    }
+
+    if (localStorage.getItem("playerwin") == null) {
+        localStorage.setItem("playerwin", 0);
+    }
+
+    if (localStorage.getItem("tie") == null) {
+        localStorage.setItem("tie", 0);
+    }
+    
+}

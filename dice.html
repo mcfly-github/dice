@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head><h1>Roll the Dice</h1><link rel="stylesheet" href="style.css"></head>
+<head><h1>Roll the Dice</h1><link rel="stylesheet" href="dice.css"></head>
 
-<body onload="computer(), computerDice(), showCounters()">
+<body onload=" setLocalStorage(), showCounters(), computer(), computerDice()">
 
 <div class="main">
 
@@ -22,6 +22,7 @@
     </div>
 
     <div class="right">
+        <button onclick="logout()" class="logout-button">Logout</button>
         <h2>Computer wins:</h2>
         <h2 id="computer-win-counter"></h2>
         <h2>Player wins:</h2>

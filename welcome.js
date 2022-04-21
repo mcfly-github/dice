@@ -7,9 +7,8 @@ function storeCredentials() {
     statusCheck()
     document.getElementById("sign-result").innerHTML = "Registration is succesful, please sign in!";
     document.getElementById("login").hidden = false;
-    
-
 }
+
 
 function checkCredentials() {
 
@@ -21,12 +20,14 @@ function checkCredentials() {
     }
 }
 
+
 function checkUsername() {
 
     if (document.getElementById("username").value === localStorage.getItem("username")) {
         return true;
     }
 }
+
 
 function checkPassword() {
 
@@ -43,7 +44,35 @@ function statusCheck() {
         document.getElementById("register").hidden = true;
     } else {
         document.getElementById("login").hidden = true;
-
     }
-    
 }
+
+
+function validateRegistration() {
+
+    if (document.getElementById("reg-username").value == "") {
+        document.getElementById("sign-result").innerHTML = alert("Username field can't be empty.");
+        location.href = "welcome.html"
+    } else if (document.getElementById("reg-password").value == "") {
+        document.getElementById("sign-result").innerHTML = alert("Password field can't be empty.");
+        location.href = "welcome.html"
+    } else {
+        storeCredentials()
+    }
+
+}
+
+
+function validateLogin() {
+
+    if (document.getElementById("username").value == "") {
+        document.getElementById("sign-result").innerHTML = alert("Username field can't be empty.");
+        location.href = "welcome.html"
+    } else if (document.getElementById("password").value == "") {
+        document.getElementById("sign-result").innerHTML = alert("Password field can't be empty.");
+        location.href = "welcome.html"
+    } else {
+        checkCredentials()
+    }
+}
+

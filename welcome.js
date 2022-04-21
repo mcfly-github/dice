@@ -76,3 +76,9 @@ function validateLogin() {
     }
 }
 
+
+function resetLocalStorage() {
+
+    localStorage.clear()
+    location.reload()
+}

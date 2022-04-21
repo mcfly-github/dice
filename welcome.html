@@ -6,25 +6,25 @@
 <form id="register">
 <label for="reg-username">Username:</label>
 <br>
-<input type="text" name="reg-username" id="reg-username">
+<input type="text" name="reg-username" id="reg-username" required>
 <br><br><br>
 <label for="reg-password">Password:</label>
 <br>
-<input type="password" name="reg-password" id="reg-password">
+<input type="password" name="reg-password" id="reg-password" required>
 <br><br><br>
-<input type="button" onclick="storeCredentials()" value="Register">
+<input type="button" onclick="validateRegistration()" value="Register">
 </form>
 
 <form id="login">
 <label for="username">Username:</label>
 <br>  
-<input type="text" name="username" id="username">
+<input type="text" name="username" id="username" required>
 <br><br><br>
 <label for="password">Password:</label>
 <br>
-<input type="password" name="password" id="password">
+<input type="password" name="password" id="password" required>
 <br><br><br>
-<input type="button" onclick="checkCredentials()" value="Login">  
+<input type="button" onclick="validateLogin()" value="Login">  
 </form>
 <br><br><br>
 <p id="sign-result"></p>

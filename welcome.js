@@ -51,25 +51,24 @@ function statusCheck() {
 function validateRegistration() {
 
     if (document.getElementById("reg-username").value == "") {
-        document.getElementById("sign-result").innerHTML = alert("Username field can't be empty.");
+        alert("Username field can't be empty.");
         location.href = "welcome.html"
     } else if (document.getElementById("reg-password").value == "") {
-        document.getElementById("sign-result").innerHTML = alert("Password field can't be empty.");
+        alert("Password field can't be empty.");
         location.href = "welcome.html"
     } else {
         storeCredentials()
     }
-
 }
 
 
 function validateLogin() {
 
     if (document.getElementById("username").value == "") {
-        document.getElementById("sign-result").innerHTML = alert("Username field can't be empty.");
+        alert("Username field can't be empty.");
         location.href = "welcome.html"
     } else if (document.getElementById("password").value == "") {
-        document.getElementById("sign-result").innerHTML = alert("Password field can't be empty.");
+        alert("Password field can't be empty.");
         location.href = "welcome.html"
     } else {
         checkCredentials()
